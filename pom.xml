@@ -14,7 +14,7 @@
     <artifactId>site-chatbot</artifactId>
     <packaging>lutece-site</packaging>
     <version>1.0.0-SNAPSHOT</version>
-    <name>My site</name>
+    <name>Site Builder Chatbot demo site</name>
 
     <repositories>
         <repository>
@@ -50,11 +50,6 @@
         </dependency>
     </dependencies>
 
-    <!--
-    <scm>
-        <connection>scm:svn:http://dev.lutece.paris.fr/svn/sites/site-mysite/trunk/</connection>
-    </scm>
-    -->
 
 </project>
 

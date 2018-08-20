@@ -19,9 +19,18 @@ ADD webapp /app/webapp
 RUN mvn lutece:site-assembly
 RUN mv /app/target/${site}/ /app/target/webapp
 
+# change default database host
+WORKDIR /app/target/webapp/WEB-INF/conf
+RUN  sed -i 's/root/admin/' db.properties
+
+
 # run the database initialization script
 WORKDIR /app/target/webapp/WEB-INF/sql
-RUN  /etc/init.d/mysql start && sleep 5s && mysql -uroot -pmotdepasse mysql -e "update user set plugin='', host='%', password='*1F48A8CB9F3BAAE4504A9A4549B0AA290BD4E27B'; FLUSH PRIVILEGES;"  &&  sleep 5s && ant && sleep 5s
+RUN  /etc/init.d/mysql start && \
+    sleep 5s && \
+    mysql -uroot -e "CREATE USER 'admin'@'%' IDENTIFIED BY 'motdepasse'; GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%';FLUSH PRIVILEGES;CREATE DATABASE lutece" && \
+    sleep 5s && \
+    ant && sleep 5s
 
 
 # change default database host
