@@ -3,6 +3,10 @@ FROM lutece/builder as builder
 # define the fully qualified artifact of the site
 ARG site=site-chatbot-1.0.0-SNAPSHOT
 
+# maven proxies sigh
+RUN  [ -z "$http_proxy" ] || (head -n -1 /etc/maven/settings.xml |  sed '/<proxies>/,/<\/proxies>/d' > /tmp/settings.xml && echo "<proxies><proxy> <id>optional</id> <active>true</active> <protocol>http</protocol> <host>$(echo $http_proxy| sed -e 's/https\?:\/\///' | cut -d':' -f1)</host> <port>$(echo $http_proxy| sed -e 's/https\?:\/\///' | cut -d':' -f2 | cut -d '/' -f1)</port> <nonProxyHosts>*.mdp|localhost</nonProxyHosts> </proxy></proxies></settings>" >> /tmp/settings.xml && cp /tmp/settings.xml /etc/maven/settings.xml)
+
+
 # build the site and assemble the webapp
 WORKDIR /app
 ADD pom.xml /app/pom.xml

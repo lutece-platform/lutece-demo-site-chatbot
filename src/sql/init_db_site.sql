@@ -5,14 +5,16 @@ INSERT INTO core_admin_user VALUES (1,'admin','Admin','admin','admin@lutece.fr',
 
 
 -- override site properties
-REPLACE INTO core_datastore VALUES ('portal.site.site_property.name', 'chatbot');
+REPLACE INTO core_datastore VALUES ('portal.site.site_property.name', 'Chatbot Demo Site');
 REPLACE INTO core_datastore VALUES ('portal.site.site_property.meta.author', 'chatbot team');
+REPLACE INTO core_datastore VALUES ('portal.site.site_property.locale.default', 'en');
 REPLACE INTO core_datastore VALUES ('portal.site.site_property.meta.copyright', 'Copyright &copyright; City of Paris');
 REPLACE INTO core_datastore VALUES ('portal.site.site_property.meta.description', '<description>');
 REPLACE INTO core_datastore VALUES ('portal.site.site_property.meta.keywords', '<keywords>');
 REPLACE INTO core_datastore VALUES ('portal.site.site_property.email', 'lutece-dev@paris.fr');
 REPLACE INTO core_datastore VALUES ('portal.site.site_property.noreply_email', 'no-reply@paris.fr');
 REPLACE INTO core_datastore VALUES ('portal.site.site_property.home_url', 'jsp/site/Portal.jsp?page=chatbot');
+REPLACE INTO core_datastore VALUES ('portal.site.site_property.back_images', 'webapp/images/admin/skin/bg_images1.jpg' , 'webapp/images/admin/skin/bg_images2.jpg' , 'webapp/images/admin/skin/bg_images3.jpg' , 'webapp/images/admin/skin/bg_images4.jpg');
 
 -- override plugin status
 REPLACE INTO core_datastore VALUES ('core.plugins.status.html.installed' ,'truel' );
