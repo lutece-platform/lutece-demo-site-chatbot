@@ -14,7 +14,7 @@
     <artifactId>site-chatbot</artifactId>
     <packaging>lutece-site</packaging>
     <version>1.0.0-SNAPSHOT</version>
-    <name>Site Builder Chatbot demo site</name>
+    <name>Lutece sitebuilder chatbot demo site</name>
 
     <repositories>
         <repository>
