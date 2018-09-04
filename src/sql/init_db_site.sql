@@ -25,5 +25,10 @@ REPLACE INTO core_datastore VALUES ('core.plugins.status.easyrulesbot.installed'
 REPLACE INTO core_datastore VALUES ('core.plugins.status.easyrulesbot.pool' ,'portal' );
 REPLACE INTO core_datastore VALUES ('core.plugins.status.easyrulesbot-sitebuilder.installed' ,'true' );
 REPLACE INTO core_datastore VALUES ('core.plugins.status.easyrulesbot-sitebuilder.pool' ,'portal' );
+REPLACE INTO core_datastore VALUES ('core.plugins.status.recast.installed' ,'true' );
+REPLACE INTO core_datastore VALUES ('core.plugins.status.recast.pool' ,'portal' );
+REPLACE INTO core_datastore VALUES ('core.plugins.status.recastbots.installed' ,'true' );
+REPLACE INTO core_datastore VALUES ('core.plugins.status.recastbots.pool' ,'portal' );
+
 
  
