@@ -68,6 +68,11 @@
         </dependency>
     </dependencies>
 
+    <scm>
+        <connection>scm:git:https://github.com/lutece-platform/lutece-demo-site-chatbot.git</connection>
+        <developerConnection>scm:git:https://github.com/lutece-platform/lutece-demo-site-chatbot.git</developerConnection>
+        <url>https://github.com/lutece-platform/lutece-demo-site-chatbot.git</url>
+    </scm>
 
 </project>
 
